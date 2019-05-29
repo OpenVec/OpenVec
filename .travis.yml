@@ -8,5 +8,5 @@ env:
  - exten=neon
 
 script:
- - make arch=$exten
- - make arch=$exten run_selftest
+ - make arch=$(exten)
+ - make arch=$(exten) run_selftest
