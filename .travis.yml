@@ -1,0 +1,12 @@
+language: cpp
+dist: xenial
+
+env:
+ - exten=intel64
+ - exten=knc
+ - exten=gccavx
+ - exten=neon
+
+script:
+ - make arch=$exten
+ - make arch=$exten run_selftest
