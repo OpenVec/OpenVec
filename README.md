@@ -24,3 +24,8 @@ For compiling:
 And use `knc_target=<device number>` for running the tests on specific KNC device.
 For example, to run on device mic0:
 `make arch=knc knc_target=0 run_selftest`
+
+### Contact Info:
+
+email: openvec@gmail.com
+
