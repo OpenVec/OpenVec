@@ -372,7 +372,6 @@ static inline ov_float ov_conditionalf(ov_maskf const OV_REF(mask), ov_float con
 }
 
 
-
 static inline ov_float ov_maddf(ov_float const OV_REF(a), ov_float const OV_REF(b), ov_float const OV_REF(c))
 {
   ov_float tmp;
@@ -380,6 +379,39 @@ static inline ov_float ov_maddf(ov_float const OV_REF(a), ov_float const OV_REF(
   return tmp;
 }
 
+static inline ov_float ov_and(ov_float const OV_REF(a), ov_float const OV_REF(b))                                                                                                     
+{                                                                                                                                                                                                                 
+                                                                                                                                                                                                    
+  return ov_prv_and(OV_VREG(a), OV_VREG(b));                                                                                                                                                
+                                                                                                                                                                                                      
+}
+
+static inline ov_float ov_xor(ov_float const OV_REF(a), ov_float const OV_REF(b))                                                                                                     
+{                                                                                                                                                                                                                 
+                                                                                                                                                                                                   
+  return ov_prv_xor(OV_VREG(a), OV_VREG(b));                                                                                                                                                                                                                                                                                                                                                     
+}
+
+static inline ov_float ov_blend16(ov_float const OV_REF(a), ov_float const OV_REF(b))                                                                                                  
+{                                                                                                                                                                                                                 
+                                                                                                                                                                                                    
+  return ov_prv_blend16(OV_VREG(a), OV_VREG(b));                                                                                                                                             
+                                                                                                                                                                                                      
+}  
+
+static inline ov_float ov_shl64(ov_float const OV_REF(a), ov_float const OV_REF(b))                                                                                                    
+{                                                                                                                                                                                                                 
+                                                                                                                                                                                                   
+  return ov_prv_shl64(OV_VREG(a), OV_VREG(b));                                                                                                                                               
+                                                                                                                                                                                                     
+}
+
+static inline ov_float ov_shr64(ov_float const OV_REF(a), ov_float const OV_REF(b))                                                                                                    
+{                                                                                                                                                                                                                 
+                                                                                                                                                                                                   
+  return ov_prv_shr64(OV_VREG(a), OV_VREG(b));                                                                                                                                               
+                                                                                                                                                                                                     
+}
 
 static inline ov_float ov_msubf(ov_float const OV_REF(a), ov_float const OV_REF(b), ov_float const OV_REF(c))
 {
@@ -435,6 +467,11 @@ static inline ov_maskf ov_ltf(ov_float const OV_REF(a), ov_float const OV_REF(b)
 
 #define ov_msubf ov_prv_msubf
 #define ov_maddf ov_prv_maddf
+#define ov_xor ov_prv_xor
+#define ov_and ov_prv_and
+#define ov_blend16 ov_prv_blend16
+#define ov_shl64 ov_prv_shl64
+#define ov_shr64 ov_prv_shr64
 #define ov_conditionalf ov_prv_conditionalf
 
 #define ov_floorf ov_prv_floorf
@@ -716,6 +753,11 @@ static inline ov_float operator/(float const &a, ov_float const &b)
 #define ov_mulf ov_prv_mulf
 #define ov_divf ov_prv_divf
 #define ov_maddf ov_prv_maddf
+#define ov_xor ov_prv_xor                                                                                                                                                                                       
+#define ov_and ov_prv_and                                                                                                                                                                                       
+#define ov_blend16 ov_prv_blend16                                                                                                                                                                               
+#define ov_shl64 ov_prv_shl64                                                                                                                                                                                   
+#define ov_shr64 ov_prv_shr64
 #define ov_conditionalf ov_prv_conditionalf
 #define ov_getzerof ov_prv_getzerof
 #define ov_uloadf ov_prv_uloadf
